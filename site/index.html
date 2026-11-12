@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="SMS Medical: CLIA-certified, COLA-accredited clinical laboratory in Oak Lawn, IL, with mobile phlebotomy and bedside imaging through United Diagnostic Services.">
+<meta name="description" content="Laboratory testing, mobile phlebotomy and bedside imaging for long-term care, home health and physician practices across Chicagoland. CLIA-certified, COLA-accredited lab in Oak Lawn, IL.">
 <link rel="icon" type="image/png" href="img/sms-logo-icon.png">
 <title>SMS Medical | Lab Testing, Mobile Phlebotomy &amp; Imaging in Oak Lawn, IL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1534,6 +1534,22 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
   .n-hero .n-spec .n-sp-steps { font-size: 12.5px; }
   .n-hero .n-report { padding: 40px 16px 14px; }
 }
+
+/* ===== build30: audit fixes ===== */
+.b-grid5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1180px) { .b-grid5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 960px) { .b-grid5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .b-grid5 { grid-template-columns: minmax(0, 1fr); } }
+.m-login { display: none; }
+@media (max-width: 699px) {
+  .m-login { display: inline-flex; align-items: center; margin-left: auto; min-height: 40px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; background: var(--btn, #0f766e); color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; }
+  .m-login:hover, .m-login:focus-visible { background: var(--btn-hover, #115e59); }
+  .m-login + .menu-btn { margin-left: 8px; min-height: 40px; }
+  .foot a { padding: 9px 0; }
+  .legal-links { gap: 20px; } .legal-links a { display: inline-block; padding: 10px 0; }
+}
+.c-line dd.c-btn { user-select: none; }
+@media print { .b-steps.b-anim li { opacity: 1 !important; transform: none !important; } }
 </style>
 </head>
 <body>
@@ -1544,11 +1560,12 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 <header class="site-head on-dark" id="site-head">
   <div class="wrap head-in">
     <a class="brand" href="#top" aria-label="SMS Medical home"><img class="logo-w" src="img/sms-logo-white.png" alt="SMS Medical" width="128" height="38"><img class="logo-c" src="img/sms-logo-color.png" alt="" width="128" height="38"></a>
+    <a class="m-login" href="https://portal.smsmedical.net">Log in</a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
       <div class="nav-mtop"><a class="btn btn-primary" href="#account">Become a partner</a><a class="btn btn-ghost" href="https://portal.smsmedical.net">Provider login</a></div>
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-svc">Services<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel dd-2" id="dd-svc" hidden><a href="#services"><b>Laboratory testing</b><span>Routine to specialty testing in Oak Lawn</span></a><a href="#services"><b>Mobile imaging (UDS)</b><span>X-ray, ultrasound, Doppler, echo and EKG at the bedside</span></a><a href="#mobile-phlebotomy"><b>Mobile phlebotomy &amp; STAT</b><span>Draws at your facility, practice or patients&rsquo; homes</span></a><a href="#specialty"><b>Specialty testing</b><span>Molecular (PCR) and toxicology</span></a><a href="#pgx"><b>PGx testing</b><span>20-gene medication response panel</span></a><a href="#technology"><b>How service works</b><span>Ordering, collection, testing and reports</span></a></div></div>
-      <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-who">Who we serve<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-who" hidden><a href="#who-snf"><b>Skilled nursing facilities</b><span>Scheduled draws, STAT service and bedside imaging</span></a><a href="#who-al"><b>Assisted &amp; independent living</b><span>We bring the draw and the X-ray to residents</span></a><a href="#who-md"><b>Medical practices</b><span>On-site phlebotomists, courier pickup, electronic results</span></a><a href="#who-hh"><b>Home health agencies</b><span>Draws for homebound patients</span></a><a href="#mobile-phlebotomy"><b>All mobile phlebotomy services</b><span>Including home physician groups</span></a></div></div>
+      <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-who">Who we serve<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-who" hidden><a href="#who-snf"><b>Skilled nursing facilities</b><span>Scheduled draws, STAT service and bedside imaging</span></a><a href="#who-al"><b>Assisted &amp; independent living</b><span>We bring the draw and the X-ray to residents</span></a><a href="#who-hh"><b>Home health agencies</b><span>Draws for homebound patients</span></a><a href="#who-hp"><b>Home physician groups</b><span>Draws and imaging for house-call practices</span></a><a href="#who-md"><b>Medical practices</b><span>On-site phlebotomists, courier pickup, electronic results</span></a><a href="#mobile-phlebotomy"><b>All mobile phlebotomy services</b><span>Schedules, STAT and coverage</span></a></div></div>
       <a class="nav-top" href="#coverage">Coverage</a>
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-co">Company<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-co" hidden><a href="#credentials"><b>Credentials</b><span>CLIA certification and COLA accreditation</span></a><a href="#contact"><b>Contact</b><span>Lab and imaging phone, fax and email</span></a><a href="#message"><b>Send us a message</b><span>Questions for our team</span></a><a href="#careers"><b>Careers</b><span>Field, lab and office roles</span></a><a href="#privacy"><b>Privacy policy</b><span>How we handle website information</span></a><a href="#terms"><b>Terms of use</b><span>The rules for using this site</span></a></div></div>
       <a class="nav-top" href="#directory">Test directory</a>
@@ -1574,7 +1591,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
     <div class="n-copy">
       <div class="n-pill">CLIA-certified · COLA-accredited · Oak Lawn, IL</div>
       <h1 id="hero-h">Better care begins with <span class="n-ans">answers.</span></h1>
-      <p class="n-lede">Laboratory testing, mobile phlebotomy, and bedside imaging for skilled nursing facilities, senior living communities, and medical practices.</p>
+      <p class="n-lede">Laboratory testing, mobile phlebotomy, and bedside imaging for skilled nursing facilities, senior living communities, home health agencies, and medical practices.</p>
       <div class="n-ctas">
         <a class="n-btn n-btn-primary" href="#account">Become a partner</a>
         <a class="n-btn n-btn-ghost" href="#services">Explore our services</a>
@@ -1654,11 +1671,12 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 </section>
 <section id="who" class="b-sec b-wash" aria-labelledby="who-h"><div class="wrap">
   <div class="b-head"><div class="eyebrow">Who we serve</div><h2 id="who-h">Built for care teams and practices.</h2><p class="lede">Mobile phlebotomy, laboratory testing, and bedside imaging for the teams that care for patients where they live and work.</p></div>
-  <div class="b-grid4">
+  <div class="b-grid4 b-grid5">
     <article id="who-snf" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6M4 21h16"/></svg></span><h3>Skilled nursing facilities</h3><p>Scheduled draws, STAT service, and bedside imaging for your residents, with results in your EHR where we integrate.</p></article>
     <article id="who-al" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><h3>Assisted &amp; independent living</h3><p>Residents stay home. We bring the draw and the X-ray to them.</p></article>
-    <article id="who-md" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 7v6M9 10h6M9 17h6"/></svg></span><h3>Medical practices</h3><p>On-site phlebotomists, courier pickup, and electronic orders and results.</p></article>
     <article id="who-hh" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M12 13v4M10 15h4"/></svg></span><h3>Home health agencies</h3><p>Draws for your homebound patients, coordinated with your clinicians&rsquo; visit schedules.</p></article>
+    <article id="who-hp" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 15.5a2.5 2.5 0 0 0 5 0V13"/><circle cx="14.5" cy="12" r="1"/></svg></span><h3>Home physician groups</h3><p>Draws and bedside imaging for your homebound patients, with results to your EHR or the provider portal.</p></article>
+    <article id="who-md" class="b-card"><span class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 7v6M9 10h6M9 17h6"/></svg></span><h3>Medical practices</h3><p>On-site phlebotomists, courier pickup, and electronic orders and results.</p></article>
   </div>
   <div class="b-more"><a class="pc-link" href="#mobile-phlebotomy">See our mobile phlebotomy services →</a></div>
 </div></section>
@@ -1776,20 +1794,20 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       <article class="c-card">
         <div class="top"><img src="img/sms-logo-color.png" alt="SMS Medical" width="134" height="40"></div>
         <dl class="c-lines">
-          <div class="c-line"><dt>Phone</dt><dd id="c1">(708) 424-9405</dd><button class="copy" data-copy="c1">Copy</button></div>
-          <div class="c-line"><dt>Fax</dt><dd id="c2">(708) 424-8038</dd><button class="copy" data-copy="c2">Copy</button></div>
-          <div class="c-line"><dt>Email</dt><dd id="c3">info@smsmedical.net</dd><button class="copy" data-copy="c3">Copy</button></div>
-          <div class="c-line"><dt>Address</dt><dd id="c4">5533 W 109th St, Suite 101, Oak Lawn, IL 60453</dd><button class="copy" data-copy="c4">Copy</button></div>
+          <div class="c-line"><dt>Phone</dt><dd id="c1">(708) 424-9405</dd><dd class="c-btn"><button class="copy" data-copy="c1">Copy</button></dd></div>
+          <div class="c-line"><dt>Fax</dt><dd id="c2">(708) 424-8038</dd><dd class="c-btn"><button class="copy" data-copy="c2">Copy</button></dd></div>
+          <div class="c-line"><dt>Email</dt><dd id="c3">info@smsmedical.net</dd><dd class="c-btn"><button class="copy" data-copy="c3">Copy</button></dd></div>
+          <div class="c-line"><dt>Address</dt><dd id="c4">5533 W 109th St, Suite 101, Oak Lawn, IL 60453</dd><dd class="c-btn"><button class="copy" data-copy="c4">Copy</button></dd></div>
           <div class="c-line"><dt>Client services</dt><dd>Mon–Fri 7:00 AM – 12:00 AM<br>Sat–Sun 8:00 AM – 8:00 PM</dd></div>
         </dl>
       </article>
       <article class="c-card">
         <div class="top"><img class="uds-logo" src="img/uds-logo.png" alt="United Diagnostic Services, a division of SMS Medical" width="232" height="44"></div>
         <dl class="c-lines">
-          <div class="c-line"><dt>Phone</dt><dd id="u1">(773) 774-8100</dd><button class="copy" data-copy="u1">Copy</button></div>
-          <div class="c-line"><dt>Fax</dt><dd id="u2">(773) 774-8101</dd><button class="copy" data-copy="u2">Copy</button></div>
-          <div class="c-line"><dt>Email</dt><dd id="u3">uds@smsmedical.net</dd><button class="copy" data-copy="u3">Copy</button></div>
-          <div class="c-line"><dt>Address</dt><dd id="u4">5533 W 109th St, Suite 101, Oak Lawn, IL 60453</dd><button class="copy" data-copy="u4">Copy</button></div>
+          <div class="c-line"><dt>Phone</dt><dd id="u1">(773) 774-8100</dd><dd class="c-btn"><button class="copy" data-copy="u1">Copy</button></dd></div>
+          <div class="c-line"><dt>Fax</dt><dd id="u2">(773) 774-8101</dd><dd class="c-btn"><button class="copy" data-copy="u2">Copy</button></dd></div>
+          <div class="c-line"><dt>Email</dt><dd id="u3">uds@smsmedical.net</dd><dd class="c-btn"><button class="copy" data-copy="u3">Copy</button></dd></div>
+          <div class="c-line"><dt>Address</dt><dd id="u4">5533 W 109th St, Suite 101, Oak Lawn, IL 60453</dd><dd class="c-btn"><button class="copy" data-copy="u4">Copy</button></dd></div>
         </dl>
       </article>
     </div>
@@ -2735,8 +2753,8 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       <div><img src="img/sms-logo-white.png" alt="SMS Medical" width="121" height="36"><p style="margin-top:14px;max-width:38ch">SMS Medical is a full-service, licensed, high-complexity clinical laboratory operated by Southwest Medical Solutions, Inc. United Diagnostic Services is a division of SMS Medical.</p></div>
       <div><h4>Services</h4><a href="#services">Laboratory</a><a href="#specialty">Molecular &amp; Toxicology</a><a href="#pgx">PGx testing</a><a href="#mobile-phlebotomy">Mobile phlebotomy</a><a href="#services">Mobile imaging</a><a href="#integrations">Integrations</a><a href="#technology">Technology</a><a href="#directory">Test directory</a></div>
       <div><h4>Providers</h4><a href="https://portal.smsmedical.net">Provider login</a><a href="#faq">FAQ</a><a href="#faq-critical">Critical value list</a><a href="#account">Open an account</a><a href="#supplies">Order supplies</a><a href="#pickup">Courier pickup</a><a href="#forms">Forms &amp; requisitions</a></div>
-      <div><h4>From our blog</h4><a href="#blog-stigma">The stigma surrounding STDs</a><a href="#blog-mental-health">STDs and mental health</a><a href="#blog-trich">The often-overlooked STD: trich</a><a href="#blog">All articles</a></div>
-      <div><h4>Company</h4><a href="#patients">For patients</a><a href="#contact">Contact</a><a href="#coverage">Coverage map</a><a href="#careers">Careers</a><a href="#billing">Billing &amp; insurance</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></div>
+      <div><h4>Patients</h4><a href="#patients">Patient center</a><a href="#book">Book an appointment</a><a href="#std">STD testing</a><a href="#dna">DNA testing</a><a href="#billing">Billing &amp; insurance</a><a href="#blog">Health articles</a></div>
+      <div><h4>Company</h4><a href="#credentials">Credentials</a><a href="#contact">Contact</a><a href="#coverage">Coverage map</a><a href="#careers">Careers</a><a href="#billing">Billing &amp; insurance</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></div>
     </div>
     <div class="legal"><span>CLIA 14D2189300 · COLA accredited · Laboratory Director: Haoliang Xu, MD</span><span>© 2026 Southwest Medical Solutions, Inc. All rights reserved. <span class="legal-links"><a href="#privacy">Privacy</a><a href="#terms">Terms</a></span></span></div>
   </div>
@@ -2981,7 +2999,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
   // ad measurement: Google Ads + Meta, live site only, never on health-topic pages
   (function () {
     if (!/(^|\.)smsmedlab\.com$|^(www\.|new\.)?smsmedical\.net$/.test(location.hostname)) return;
-    function sensitive() { return /^(std|dna|blog)/.test(curHash()); }
+    function sensitive() { return /^(std|dna|blog|patients|book|billing|good-faith-estimate)/.test(curHash()); }
     window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
     var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-975697357'; document.head.appendChild(g);
     gtag('js', new Date());

@@ -13,7 +13,7 @@ if ($path === '/index.php') $path = '/';
 
 $PAGES = [
   '/' => ['SMS Medical | Lab Testing, Mobile Phlebotomy & Imaging in Oak Lawn, IL',
-          'CLIA-certified, COLA-accredited clinical lab in Oak Lawn, IL. STD and DNA testing, blood work, molecular and toxicology testing, mobile phlebotomy, and bedside imaging through United Diagnostic Services.'],
+          'Laboratory testing, mobile phlebotomy and bedside imaging for long-term care, home health and physician practices across Chicagoland. CLIA-certified, COLA-accredited lab in Oak Lawn, IL.'],
   '/std-testing' => ['STD Testing in Oak Lawn, IL | Confidential, Fast Results | SMS Medical',
           'Confidential STD testing in Oak Lawn, IL for chlamydia, gonorrhea, syphilis, herpes, trichomoniasis, Mycoplasma genitalium, HIV, and hepatitis. Panels from $78, most results in 24 to 48 hours. Book online.'],
   '/dna-testing' => ['DNA Paternity Testing in Oak Lawn, IL | Legal & Peace of Mind | SMS Medical',
@@ -53,7 +53,12 @@ $head = "<base href=\"/\">\n"
       . '<meta property="og:site_name" content="SMS Medical">' . "\n"
       . '<meta property="og:title" content="' . $e($title) . "\">\n"
       . '<meta property="og:description" content="' . $e($desc) . "\">\n"
-      . '<meta property="og:url" content="' . $e($url) . "\">\n";
+      . '<meta property="og:url" content="' . $e($url) . "\">\n"
+      . '<meta property="og:image" content="' . $e($scheme . '://' . $host . '/img/share.jpg') . "\">\n"
+      . '<meta property="og:image:width" content="1200">' . "\n"
+      . '<meta property="og:image:height" content="630">' . "\n"
+      . '<meta property="og:image:alt" content="SMS Medical: Better care begins with answers.">' . "\n"
+      . '<meta name="twitter:card" content="summary_large_image">' . "\n";
 if ($path === '/') {
   $ld = [
     '@context' => 'https://schema.org', '@type' => 'MedicalBusiness', 'name' => 'SMS Medical', 'legalName' => 'Southwest Medical Solutions, Inc.',
