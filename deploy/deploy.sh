@@ -39,7 +39,9 @@ URL=git@github.com:smsmed5533/sms-website.git
 if [ ! -d "$REPO/.git" ]; then
   rm -rf "$REPO"
   if ! out=$("$GIT" clone -q --depth 20 --branch "$BRANCH" "$URL" "$REPO" 2>&1); then
-    if [ ! -f "$BASE/use443" ]; then touch "$BASE/use443"; log "clone over 22 failed, switching to 443: $out"; else log "clone failed: $out"; fi
+    if [ ! -f "$BASE/use443" ] && echo "$out" | grep -qiE 'timed out|refused|unreachable|resolve'; then
+      touch "$BASE/use443"; log "port 22 blocked, switching to 443: $out"
+    else log "clone failed: $out"; fi
     status error none "clone failed: $out"; exit 1
   fi
   "$GIT" -C "$REPO" remote set-url origin "$URL"
