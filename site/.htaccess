@@ -1,0 +1,45 @@
+# SMS Medical website (new site, launched Nov 2026)
+# Previous rules are backed up in /home/smsmedin/site-backups/2026-11-10-before-new-site/.htaccess
+DirectoryIndex index.php index.html
+Options -Indexes -MultiViews
+
+RewriteEngine On
+
+# One public address: https://smsmedical.net (www and plain http redirect here)
+RewriteCond %{HTTP_HOST} ^www\.smsmedical\.net$ [NC]
+RewriteRule ^ https://smsmedical.net%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+# Kept from the previous setup
+RewriteCond %{HTTP_HOST} ^ordermyexam\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ordermyexam\.com$
+RewriteRule ^/?$ https://covid19.smsmedical.net/ [R=301,L]
+RewriteRule ^sbaig/?$ https://www.linkedin.com/in/sbaigsms/ [R=301,L]
+RewriteRule ^COVID/index-2\.html/?(.*)$ / [R=301,L]
+
+# Pass the Authorization header to PHP
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Old smsmedlab.com pages that were folded into sections of the new site
+RewriteRule ^b2b/?$ /#providers [R=301,NE,L]
+RewriteRule ^partnership/?$ /#services [R=301,NE,L]
+RewriteRule ^about/?$ / [R=301,L]
+RewriteRule ^(covid-testing|same-day-pcr)/?$ /#patients [R=302,NE,L]
+
+# One address per page: /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Site pages and anything that isn't a real file or folder: served by index.php (unknown pages get a 404)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “alt-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-alt-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
