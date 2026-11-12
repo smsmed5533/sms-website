@@ -28,6 +28,12 @@ RewriteRule ^partnership/?$ /#services [R=301,NE,L]
 RewriteRule ^about/?$ / [R=301,L]
 RewriteRule ^(covid-testing|same-day-pcr)/?$ /#patients [R=302,NE,L]
 
+# Pages from earlier sites, retired Nov 12, 2026
+# (files moved to /home/smsmedin/site-backups/2026-11-12-retired-public-files)
+RewriteRule ^dna(/.*)?$ /dna-testing [R=301,L]
+RewriteRule ^disclaimer(/.*)?$ /terms-of-use [R=301,L]
+RewriteRule ^(COVID|COVID-old|COVID-old2|Covid2|waiver|oldindex\.php)(/.*)?$ / [R=301,L]
+
 # One address per page: /index.html -> /
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
 RewriteRule ^index\.html$ / [R=301,L]
