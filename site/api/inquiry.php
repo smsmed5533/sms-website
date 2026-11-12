@@ -9,7 +9,7 @@
  */
 
 // ---- settings -------------------------------------------------------------
-$TO        = ['info@smsmedlab.com'];                        // who receives these messages
+$TO        = ['info@smsmedical.net'];                      // who receives these messages
 $FROM      = 'SMS Medical Website <admin@smsmedical.net>';  // must be on the Resend-verified domain
 $ALLOWED   = ['https://smsmedical.net', 'https://www.smsmedical.net', 'https://new.smsmedical.net', 'https://smsmedlab.com', 'https://www.smsmedlab.com'];
 $KEY_FILE  = dirname(__DIR__, 2) . '/.resend_key';
