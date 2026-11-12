@@ -3000,21 +3000,25 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
   (function () {
     if (!/(^|\.)smsmedlab\.com$|^(www\.|new\.)?smsmedical\.net$/.test(location.hostname)) return;
     function sensitive() { return /^(std|dna|blog|patients|book|billing|good-faith-estimate)/.test(curHash()); }
-    window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
-    var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-975697357'; document.head.appendChild(g);
-    gtag('js', new Date());
-    gtag('config', 'AW-975697357', { send_page_view: !sensitive() });
-    gtag('config', 'AW-975697357/Ib4hCNb_xpsYEM3rn9ED', { phone_conversion_number: '(708) 424-9405' });
+    function loadGoogle() {
+      if (window.gtag) return;
+      window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-975697357'; document.head.appendChild(g);
+      gtag('js', new Date());
+      gtag('config', 'AW-975697357');
+      gtag('config', 'AW-975697357/Ib4hCNb_xpsYEM3rn9ED', { phone_conversion_number: '(708) 424-9405' });
+    }
     function loadMeta() {
       if (window.fbq) return;
       !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '564204859118807'); fbq('init', '215671568024263'); fbq('track', 'PageView');
     }
-    if (!sensitive()) loadMeta();
-    else addEventListener('hashchange', function h() { if (!sensitive()) { loadMeta(); removeEventListener('hashchange', h); } });
+    // ad tags load only once the visitor is on a non-patient page
+    if (!sensitive()) { loadGoogle(); loadMeta(); }
+    else addEventListener('hashchange', function h() { if (!sensitive()) { loadGoogle(); loadMeta(); removeEventListener('hashchange', h); } });
     window.smsTrack = function (ev) {
       if (sensitive()) return;
-      try { gtag('event', ev); if (window.fbq) fbq('track', ev === 'book_open' ? 'Schedule' : 'Lead'); } catch (e) {}
+      try { if (window.gtag) gtag('event', ev); if (window.fbq) fbq('track', ev === 'book_open' ? 'Schedule' : 'Lead'); } catch (e) {}
     };
   })();
 
