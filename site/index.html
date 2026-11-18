@@ -1569,7 +1569,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 .pp-who p, .pp-bio p { margin: 0; color: var(--muted); font-size: 15.5px}
 .pp-num { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-wash); color: var(--teal-ink); font: 700 15px var(--display)}
 .pp-gap { margin-top: 72px}
-.pp-bio { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px}
+.pp-bio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px}
 .pp-bio article { display: flex; flex-direction: column}
 .pp-bio article > p { margin-bottom: 16px}
 .pp-ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--teal-wash)}
@@ -1607,10 +1607,11 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
 @media (max-width: 980px) {
   .pp-hero-in, .pp-res-in { grid-template-columns: minmax(0, 1fr); gap: 36px}
   .pp-who { grid-template-columns: minmax(0, 1fr)}
+  .pp-bio { grid-template-columns: repeat(2, minmax(0, 1fr))}
   .pp-steps { grid-template-columns: repeat(2, minmax(0, 1fr))}
 }
 @media (max-width: 560px) {
-  .pp-steps { grid-template-columns: minmax(0, 1fr)}
+  .pp-steps, .pp-bio { grid-template-columns: minmax(0, 1fr)}
   .pp-res { padding-block: 64px}
   .pp-r-head div { text-align: left}
   .pp-r-rows { padding: 4px 16px} .pp-r-head, .pp-r-note { padding-inline: 16px}
@@ -2694,7 +2695,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
       <article class="pc" data-reveal style="--d:.09s">
         <span class="tag">Peptides &amp; GLP-1</span>
         <h3>Peptide monitoring panel</h3>
-        <p>On semaglutide, tirzepatide, or another peptide therapy? One $150 blood draw checks 30+ biomarkers across blood sugar, heart, kidneys, liver, pancreas, and thyroid.</p>
+        <p>On semaglutide, tirzepatide, or another peptide therapy? One $150 blood draw checks 30+ biomarkers across blood sugar, heart, kidneys, liver, thyroid, and growth hormone. Results in 48 hours.</p>
         <div class="pc-acts"><a class="btn btn-primary sm" href="#book" data-book="Peptide panel">Book the panel</a><a class="pc-link" href="#peptide-panel">What's tested →</a></div>
       </article>
       <article class="pc" data-reveal style="--d:.12s">
@@ -2753,9 +2754,9 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <a class="back" href="#patients">← For patients</a>
         <div class="eyebrow">Peptide &amp; GLP-1 monitoring</div>
         <h1>Lab work for your peptide or GLP-1 journey.</h1>
-        <p class="lede">One quick blood draw checks 30+ biomarkers that show how your body is doing before and during therapy: blood sugar, heart, kidneys, liver, pancreas, thyroid, and more. You get an easy-to-read SMS Medical report to share with your provider.</p>
+        <p class="lede">One quick blood draw checks 30+ biomarkers that show how your body is doing before and during therapy: blood sugar, heart, kidneys, liver, pancreas, thyroid, growth hormone, and more. You get an easy-to-read SMS Medical report to share with your provider.</p>
         <div class="pg-acts"><button type="button" class="btn btn-primary" data-acuity="peptide">Book your panel · $150 <span aria-hidden="true">→</span></button><a class="pc-link" href="tel:7084249405">or call (708) 424-9405</a></div>
-        <ul class="pg-points"><li><b>$150 self-pay</b><span>One price, paid at your visit</span></li><li><b>30+ biomarkers</b><span>From one quick blood draw</span></li><li><b>Clear results</b><span>Every number explained in plain words</span></li></ul>
+        <ul class="pg-points"><li><b>$150, HSA &amp; FSA welcome</b><span>One price, paid at your visit</span></li><li><b>30+ biomarkers</b><span>From one quick blood draw</span></li><li><b>Results in 48 hours</b><span>On an easy-to-read report</span></li></ul>
       </div>
       <div class="pp-hero-card" aria-hidden="true">
         <div class="pp-hc-top"><img src="img/sms-logo-white.png" alt="" width="132" height="39"><span>Sample</span></div>
@@ -2776,7 +2777,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <article><span class="pp-num">3</span><h3>When something changes</h3><p>Switching medicines, changing your dose, or just not feeling right? A fresh panel gives you real numbers to talk about.</p></article>
       </div>
 
-      <div class="x-head pp-gap"><div class="eyebrow">What's tested</div><h2>30+ biomarkers. 8 areas of your health. One blood draw.</h2><p class="lede">A biomarker is one thing we measure in your blood, like your blood sugar or your cholesterol. We group them by the part of your health they tell you about, all tested in our own CLIA-certified, COLA-accredited lab in Oak Lawn.</p></div>
+      <div class="x-head pp-gap"><div class="eyebrow">What's tested</div><h2>30+ biomarkers. 9 areas of your health. One blood draw.</h2><p class="lede">A biomarker is one thing we measure in your blood, like your blood sugar or your cholesterol. We group them by the part of your health they tell you about, all tested in our own CLIA-certified, COLA-accredited lab in Oak Lawn.</p></div>
       <div class="pp-bio">
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></span><h3>Blood sugar &amp; metabolism</h3><p>Is your blood sugar steady, and how hard is your body working to keep it there? The main thing GLP-1 medicines are meant to improve.</p><ul class="pp-chips"><li>Glucose</li><li>Hemoglobin A1c</li><li>Insulin</li></ul></article>
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Heart health</h3><p>Your cholesterol and blood fats, and how they change as your weight changes.</p><ul class="pp-chips"><li>Total cholesterol</li><li>LDL ("bad")</li><li>HDL ("good")</li><li>Triglycerides</li></ul></article>
@@ -2785,6 +2786,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14c2-5 6-7 10-7 3 0 6 2 6 4s-2 3-4 3c-3 0-4 3-7 3-3 0-5-1-5-3z"/></svg></span><h3>Pancreas</h3><p>A check on the organ that makes insulin, which GLP-1 medicines can affect. A good number to have before you start.</p><ul class="pp-chips"><li>Lipase</li></ul></article>
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10l-1 18H8L7 3z"/><path d="M7.5 9h9"/></svg></span><h3>Hydration &amp; electrolytes</h3><p>The salts and minerals that keep your muscles, nerves, and heartbeat working. Easy to throw off when you're eating and drinking less.</p><ul class="pp-chips"><li>Sodium</li><li>Potassium</li><li>Chloride</li><li>Carbon dioxide</li><li>Calcium</li></ul></article>
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v5M7 9c-2 0-3 2-3 4 0 3 2 6 5 6 2 0 3-2 3-4V9M17 9c2 0 3 2 3 4 0 3-2 6-5 6-2 0-3-2-3-4"/></svg></span><h3>Thyroid</h3><p>Your thyroid helps set your energy, weight, and metabolism.</p><ul class="pp-chips"><li>TSH</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20 10 14l3 3 7-9"/><path d="M15 8h5v5"/></svg></span><h3>Growth hormone</h3><p>On sermorelin, ipamorelin, CJC-1295, or another growth hormone peptide? IGF-1 is the standard way to see how your body is responding.</p><ul class="pp-chips"><li>IGF-1</li></ul></article>
         <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><circle cx="16" cy="15" r="4"/></svg></span><h3>Blood health</h3><p>Your red cells, white cells, and platelets, to spot anemia, infection, and other blood problems.</p><ul class="pp-chips"><li>Red blood cells</li><li>Hemoglobin</li><li>Hematocrit</li><li>White blood cells</li><li>Platelets</li><li>+ cell size and count details</li></ul></article>
       </div>
     </div>
@@ -2824,12 +2826,12 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
 
   <section class="pg-body">
     <div class="wrap">
-      <div class="x-head"><div class="eyebrow">How it works</div><h2>Book online. In and out. Results to you.</h2></div>
+      <div class="x-head"><div class="eyebrow">How it works</div><h2>Book online. In and out. Results in 48 hours.</h2></div>
       <ol class="pp-steps">
-        <li><b>Book a time</b><span>Pick a time online in about a minute. You pay $150 at your visit.</span></li>
-        <li><b>Come in fasting</b><span>Skip food for 8 to 12 hours before your draw, since the panel includes blood sugar and cholesterol. Water is fine.</span></li>
+        <li><b>Book a time</b><span>Pick a time online in about a minute. You pay $150 at your visit. HSA and FSA cards work too.</span></li>
+        <li><b>Come in fasting</b><span>Don't eat for 8 to 12 hours before your draw. Your cholesterol test needs it. Water is fine.</span></li>
         <li><b>Quick blood draw</b><span>At our Oak Lawn patient center, 5533 W 109th St, Suite 101. Bring a photo ID.</span></li>
-        <li><b>Get your results</b><span><mark class="todo">[When results are ready, and how patients receive them]</mark></span></li>
+        <li><b>Get your results</b><span>Your results are ready within 48 hours, on your easy-to-read SMS Medical report.</span></li>
       </ol>
       <div class="pg-acts pp-cta"><button type="button" class="btn btn-primary" data-acuity="peptide">Book your panel · $150 <span aria-hidden="true">→</span></button><a class="pc-link" href="tel:7084249405">Questions? Call (708) 424-9405</a></div>
 
@@ -2839,6 +2841,8 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <details><summary>Will this tell me what dose to take?</summary><p>No. The panel shows how your body is doing. Your dose and treatment are up to the provider who prescribes your medicine, so share your report with them.</p></details>
         <details><summary>What's a biomarker?</summary><p>One thing we measure in your blood, like your blood sugar, your LDL cholesterol, or a liver enzyme. Together, your 30+ biomarkers give a picture of how your body is doing.</p></details>
         <details><summary>Does this test for peptides in my blood?</summary><p>No. It checks your blood sugar, organs, cholesterol, blood counts, and thyroid, the things your therapy can affect.</p></details>
+        <details><summary>Do I need to fast?</summary><p>Yes. Don't eat for 8 to 12 hours before your draw, because the cholesterol test needs an empty stomach. Water is fine, and keep taking your medicines unless your provider says otherwise.</p></details>
+        <details><summary>Can I pay with my HSA or FSA?</summary><p>Yes. You can pay the $150 with a health savings account (HSA) or flexible spending account (FSA) card, or with a regular credit or debit card.</p></details>
         <details><summary>Can I use insurance?</summary><p>$150 is the self-pay price. Call us at (708) 424-9405 if you'd like to check your insurance coverage instead.</p></details>
         <details><summary>Are my results private?</summary><p>Yes. Your results are confidential and protected under HIPAA.</p></details>
         <details><summary>When is the patient center open?</summary><p>Monday to Friday, 9:00 AM to 5:00 PM. Weekends by appointment.</p></details>
