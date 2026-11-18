@@ -75,9 +75,11 @@ if ($path === '/') {
 // staging copy (new.smsmedical.net) stays out of search results
 if (stripos($host, 'new.') === 0) { $head .= '<meta name="robots" content="noindex, nofollow">' . "\n"; header('X-Robots-Tag: noindex, nofollow'); }
 
-$html = preg_replace('#<title>.*?</title>#s', '<title>' . $e($title) . '</title>', $html, 1);
-$html = preg_replace('#<meta name="description" content="[^"]*">#', '<meta name="description" content="' . $e($desc) . '">', $html, 1);
-$html = preg_replace('#<meta charset="utf-8">#', "<meta charset=\"utf-8\">\n" . $head, $html, 1);
+// preg_replace treats "$1", "$15" etc. in a replacement as back-references (so "$150" printed as "0"); $lit makes them literal
+$lit = function ($s) { return str_replace(array('\\', '$'), array('\\\\', '\\$'), $s); };
+$html = preg_replace('#<title>.*?</title>#s', $lit('<title>' . $e($title) . '</title>'), $html, 1);
+$html = preg_replace('#<meta name="description" content="[^"]*">#', $lit('<meta name="description" content="' . $e($desc) . '">'), $html, 1);
+$html = preg_replace('#<meta charset="utf-8">#', $lit("<meta charset=\"utf-8\">\n" . $head), $html, 1);
 
 http_response_code($status);
 header('Content-Type: text/html; charset=utf-8');
