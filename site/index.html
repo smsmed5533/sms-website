@@ -1550,12 +1550,77 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 }
 .c-line dd.c-btn { user-select: none; }
 @media print { .b-steps.b-anim li { opacity: 1 !important; transform: none !important; } }
+/* Peptide & GLP-1 monitoring panel (patient page) */
+.pp-hero-in { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center}
+.pp-hero-txt { display: grid; gap: 16px}
+.pp-hero-card { background: rgba(255,255,255,.06); border: 1px solid rgba(148,163,184,.25); border-radius: var(--r); padding: 20px 22px; box-shadow: 0 40px 80px -50px rgba(0,0,0,.7)}
+.pp-hc-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid rgba(148,163,184,.2)}
+.pp-hc-top img { height: 34px; width: auto}
+.pp-hc-top span { font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mint); border: 1px solid rgba(94,234,212,.4); border-radius: 999px; padding: 3px 9px}
+.pp-hc-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(148,163,184,.14); font-size: 15px}
+.pp-hc-row:last-child { border-bottom: 0}
+.pp-hc-row span { color: #c9d6e8} .pp-hc-row b { color: #fff; font: 600 15px var(--mono)}
+.pp-hc-row i, .pp-r-row em { font: 600 12px var(--text); font-style: normal; border-radius: 999px; padding: 3px 10px; white-space: nowrap}
+.pp-hc-row i.ok { background: rgba(94,234,212,.14); color: var(--mint)} .pp-hc-row i.hi { background: rgba(251,191,36,.16); color: #fcd34d}
+.pp-who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px}
+.pp-who article, .pp-tests article { background: #fff; border: 1.5px solid var(--line); border-radius: var(--r); padding: 24px}
+.pp-who h3, .pp-tests h3 { font-size: 19px; color: var(--ink); margin: 10px 0 6px}
+.pp-tests h3 { margin-top: 0; font-size: 17.5px}
+.pp-who p, .pp-tests p { margin: 0; color: var(--muted); font-size: 15.5px}
+.pp-num { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-wash); color: var(--teal-ink); font: 700 15px var(--display)}
+.pp-gap { margin-top: 72px}
+.pp-tests { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px}
+.pp-tests article { border-top: 4px solid var(--teal)}
+.pp-res { padding-block: 88px; background: #fff}
+.pp-res-in { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: center}
+.pp-res-txt { display: grid; gap: 14px}
+.pp-res-txt h2 { font-size: clamp(30px, 3.6vw, 44px)}
+.pp-report { position: relative; margin: 0; background: #fff; border: 1px solid var(--line-2); border-radius: var(--r); box-shadow: 0 40px 80px -48px rgba(27,42,74,.45); overflow: hidden}
+.pp-r-ribbon { background: #fff7e0; color: #7a4d00; font: 600 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 7px 10px; border-bottom: 1px solid #f3dfa8}
+.pp-r-head { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 3px solid var(--navy)}
+.pp-r-head img { height: 38px; width: auto}
+.pp-r-head div { display: grid; text-align: right} .pp-r-head b { color: var(--ink); font-size: 14.5px} .pp-r-head span { color: var(--muted); font-size: 13px}
+.pp-r-rows { padding: 6px 22px}
+.pp-r-row { display: grid; grid-template-columns: minmax(0, 1.3fr) 92px minmax(0, 1fr) 76px; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line)}
+.pp-r-row:last-child { border-bottom: 0}
+.pp-r-name b { display: block; color: var(--ink); font-size: 15px} .pp-r-name small { color: var(--muted); font-size: 13px}
+.pp-r-val { font: 600 15px var(--mono); color: var(--ink); text-align: right} .pp-r-val small { font-size: 11.5px; color: var(--muted)}
+.pp-r-bar { position: relative; height: 8px; border-radius: 99px; background: var(--wash-2)}
+.pp-r-band { position: absolute; top: 0; bottom: 0; border-radius: 99px; background: rgba(13,148,136,.35)}
+.pp-r-bar i { position: absolute; top: 50%; width: 14px; height: 14px; margin-left: -7px; transform: translateY(-50%); border-radius: 50%; background: var(--teal); border: 2px solid #fff; box-shadow: 0 0 0 1px var(--teal)}
+.pp-r-bar i.hi { background: var(--warn); box-shadow: 0 0 0 1px var(--warn)}
+.pp-r-row em { justify-self: end} .pp-r-row em.ok { background: var(--teal-wash); color: var(--teal-ink)} .pp-r-row em.hi { background: #fdf0dc; color: #8a4100}
+.pp-r-note { margin: 0; padding: 16px 22px; background: var(--wash); border-top: 1px solid var(--line); font-size: 14.5px; color: var(--body)}
+.pp-steps { list-style: none; counter-reset: pp; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px}
+.pp-steps li { counter-increment: pp; background: #fff; border: 1.5px solid var(--line); border-radius: var(--r); padding: 22px; display: grid; gap: 6px; align-content: start}
+.pp-steps li::before { content: counter(pp); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: #fff; font: 700 15px var(--display); margin-bottom: 6px}
+.pp-steps b { color: var(--ink); font-size: 17px} .pp-steps span { color: var(--muted); font-size: 15px}
+.pp-cta { margin-top: 28px}
+.pp-faq { margin-top: 72px; max-width: 880px}
+.pp-fine { margin-top: 40px; font-size: 13.5px; color: var(--muted); max-width: 80ch}
+mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius: 4px}
+@media (max-width: 980px) {
+  .pp-hero-in, .pp-res-in { grid-template-columns: minmax(0, 1fr); gap: 36px}
+  .pp-who { grid-template-columns: minmax(0, 1fr)}
+  .pp-steps { grid-template-columns: repeat(2, minmax(0, 1fr))}
+}
+@media (max-width: 560px) {
+  .pp-steps { grid-template-columns: minmax(0, 1fr)}
+  .pp-res { padding-block: 64px}
+  .pp-r-head div { text-align: left}
+  .pp-r-rows { padding: 4px 16px} .pp-r-head, .pp-r-note { padding-inline: 16px}
+  .pp-r-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px}
+  .pp-r-name { grid-column: 1; grid-row: 1}
+  .pp-r-row em { grid-column: 2; grid-row: 1}
+  .pp-r-val { grid-column: 1 / -1; grid-row: 2; text-align: left}
+  .pp-r-bar { grid-column: 1 / -1; grid-row: 3; margin-bottom: 4px}
+}
 </style>
 </head>
 <body>
 <div class="util-bar"><div class="wrap util-in">
   <span class="util-cred">CLIA-certified · COLA-accredited laboratory · Oak Lawn, IL</span>
-  <nav class="util-links" aria-label="Patients"><b>Patients</b><a href="#book">Book an appointment</a><a href="#std">STD testing</a><a href="#dna">DNA testing</a><a href="#billing">Billing &amp; insurance</a></nav>
+  <nav class="util-links" aria-label="Patients"><b>Patients</b><a href="#book">Book an appointment</a><a href="#std">STD testing</a><a href="#dna">DNA testing</a><a href="#peptide-panel">Peptide panel</a><a href="#billing">Billing &amp; insurance</a></nav>
 </div></div>
 <header class="site-head on-dark" id="site-head">
   <div class="wrap head-in">
@@ -1570,7 +1635,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-co">Company<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-co" hidden><a href="#credentials"><b>Credentials</b><span>CLIA certification and COLA accreditation</span></a><a href="#contact"><b>Contact</b><span>Lab and imaging phone, fax and email</span></a><a href="#message"><b>Send us a message</b><span>Questions for our team</span></a><a href="#careers"><b>Careers</b><span>Field, lab and office roles</span></a><a href="#privacy"><b>Privacy policy</b><span>How we handle website information</span></a><a href="#terms"><b>Terms of use</b><span>The rules for using this site</span></a></div></div>
       <a class="nav-top" href="#directory">Test directory</a>
       <div class="dd dd-res"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-res">Client resources<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-res" hidden><a href="https://portal.smsmedical.net"><b>Provider portal<svg class="dd-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M5 2.5H2.5v7h7V7M7 2.5h2.5V5M9.5 2.5 5.5 6.5"/></svg></b><span>Orders, specimen status and reports</span></a><a href="#supplies"><b>Order supplies</b><span>Tubes, swabs, cups, devices and requisitions</span></a><a href="#pickup"><b>Request a courier pickup</b><span>Routine specimen pickups</span></a><a href="#forms"><b>Forms &amp; requisitions</b><span>Lab requisition and UDS order form</span></a><a href="#integrations"><b>EHR integrations</b><span>Electronic orders and results</span></a><a href="#faq-critical"><b>Critical values</b><span>Our call list and limits</span></a><a href="#faq-providers"><b>Provider FAQ</b><span>Accounts, pickups and STAT</span></a></div></div>
-      <div class="dd dd-mob"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-pat">Patients<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-pat" hidden><a href="#book"><b>Book an appointment</b><span>Pick a time online</span></a><a href="#std"><b>STD testing</b><span>Confidential panels and prices</span></a><a href="#dna"><b>DNA paternity testing</b><span>Peace-of-mind and legal tests</span></a><a href="#patients"><b>Patient center &amp; hours</b><span>Blood work with your provider&rsquo;s order</span></a><a href="#billing"><b>Billing &amp; insurance</b><span>Plans we accept and your bill</span></a></div></div>
+      <div class="dd dd-mob"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-pat">Patients<svg class="dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="dd-panel" id="dd-pat" hidden><a href="#book"><b>Book an appointment</b><span>Pick a time online</span></a><a href="#std"><b>STD testing</b><span>Confidential panels and prices</span></a><a href="#dna"><b>DNA paternity testing</b><span>Peace-of-mind and legal tests</span></a><a href="#peptide-panel"><b>Peptide &amp; GLP-1 panel</b><span>Lab checks during therapy, $150</span></a><a href="#patients"><b>Patient center &amp; hours</b><span>Blood work with your provider&rsquo;s order</span></a><a href="#billing"><b>Billing &amp; insurance</b><span>Plans we accept and your bill</span></a></div></div>
     </nav>
     <div class="head-cta">
       <a class="head-login" href="https://portal.smsmedical.net">Provider login</a>
@@ -2621,6 +2686,12 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
         <p>Painless cheek-swab paternity testing: a peace-of-mind test for $150, or a legal, court-accepted test for $295.</p>
         <div class="pc-acts"><a class="btn btn-primary sm" href="#book" data-book="DNA testing">Book DNA testing</a><a class="pc-link" href="#dna">Prices →</a></div>
       </article>
+      <article class="pc" data-reveal style="--d:.09s">
+        <span class="tag">Peptides &amp; GLP-1</span>
+        <h3>Peptide monitoring panel</h3>
+        <p>On semaglutide, tirzepatide, or another peptide therapy? One $150 blood draw checks blood sugar, kidneys, liver, pancreas, thyroid, and cholesterol.</p>
+        <div class="pc-acts"><a class="btn btn-primary sm" href="#book" data-book="Peptide panel">Book the panel</a><a class="pc-link" href="#peptide-panel">What's tested →</a></div>
+      </article>
       <article class="pc" data-reveal style="--d:.12s">
         <span class="tag">Blood work</span>
         <h3>Lab tests from your provider</h3>
@@ -2636,6 +2707,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
         <div class="bk-choices">
           <button type="button" class="bk-choice" data-acuity="std"><span><b>STD testing</b><small>Panels from $78 · confidential</small></span><i aria-hidden="true">→</i></button>
           <button type="button" class="bk-choice" data-acuity="dna"><span><b>DNA paternity testing</b><small>Peace of mind $150 · legal $295</small></span><i aria-hidden="true">→</i></button>
+          <button type="button" class="bk-choice" data-acuity="peptide"><span><b>Peptide &amp; GLP-1 monitoring panel</b><small>$150 · one blood draw</small></span><i aria-hidden="true">→</i></button>
           <button type="button" class="bk-choice" data-acuity="general"><span><b>Blood work &amp; other tests</b><small>Bring your provider's order</small></span><i aria-hidden="true">→</i></button>
         </div>
         <p class="bk-note">Walk-ins are welcome on weekdays. Weekend visits are by appointment.<br>Prefer to call? <a href="tel:7084249405">(708) 424-9405</a></p>
@@ -2667,6 +2739,106 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
     </div>
   </div>
 </section>
+</div>
+
+<div id="view-peptide-panel" class="pg" hidden>
+  <section class="pg-hero pp-hero">
+    <div class="wrap pp-hero-in">
+      <div class="pp-hero-txt">
+        <a class="back" href="#patients">← For patients</a>
+        <div class="eyebrow">Peptide &amp; GLP-1 monitoring</div>
+        <h1>Lab work for your peptide or GLP-1 journey.</h1>
+        <p class="lede">One quick blood draw checks how your body is doing before and during therapy: blood sugar, kidneys, liver, pancreas, thyroid, and cholesterol. You get an easy-to-read SMS Medical report to share with your provider.</p>
+        <div class="pg-acts"><button type="button" class="btn btn-primary" data-acuity="peptide">Book your panel · $150 <span aria-hidden="true">→</span></button><a class="pc-link" href="tel:7084249405">or call (708) 424-9405</a></div>
+        <ul class="pg-points"><li><b>$150 self-pay</b><span>One price, paid at your visit</span></li><li><b>One quick draw</b><span>At our Oak Lawn patient center</span></li><li><b>Clear results</b><span>Every number explained in plain words</span></li></ul>
+      </div>
+      <div class="pp-hero-card" aria-hidden="true">
+        <div class="pp-hc-top"><img src="img/sms-logo-white.png" alt="" width="132" height="39"><span>Sample</span></div>
+        <div class="pp-hc-row"><span>Hemoglobin A1c</span><b>5.4 %</b><i class="ok">In range</i></div>
+        <div class="pp-hc-row"><span>Lipase (pancreas)</span><b>38 U/L</b><i class="ok">In range</i></div>
+        <div class="pp-hc-row"><span>LDL cholesterol</span><b>128 mg/dL</b><i class="hi">High</i></div>
+        <div class="pp-hc-row"><span>Creatinine (kidneys)</span><b>0.9 mg/dL</b><i class="ok">In range</i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-body">
+    <div class="wrap">
+      <div class="x-head"><div class="eyebrow">Who it's for</div><h2>Know where you started. See how you're doing.</h2><p class="lede">GLP-1 medicines like semaglutide and tirzepatide, and other peptide therapies, can change your blood sugar, digestion, and weight quickly. Regular lab checks help you and your provider stay ahead of it.</p></div>
+      <div class="pp-who">
+        <article><span class="pp-num">1</span><h3>Before you start</h3><p>Get a baseline, so you and your provider know your numbers before therapy begins.</p></article>
+        <article><span class="pp-num">2</span><h3>While you're on therapy</h3><p>Check in on the organs and levels your medicine can affect, on the schedule your provider recommends.</p></article>
+        <article><span class="pp-num">3</span><h3>When something changes</h3><p>Switching medicines, changing your dose, or just not feeling right? A fresh panel gives you real numbers to talk about.</p></article>
+      </div>
+
+      <div class="x-head pp-gap"><div class="eyebrow">What's tested</div><h2>Seven tests, one visit.</h2><p class="lede">Everything is run in our own CLIA-certified, COLA-accredited lab in Oak Lawn.</p></div>
+      <div class="pp-tests">
+        <article><h3>Comprehensive metabolic panel</h3><p>Blood sugar, kidney and liver function, and the salts and fluids your body needs. Important if you're eating or drinking less.</p></article>
+        <article><h3>Hemoglobin A1c</h3><p>Your average blood sugar over the last 2 to 3 months.</p></article>
+        <article><h3>Insulin</h3><p>How hard your body is working to keep your blood sugar steady.</p></article>
+        <article><h3>Lipase</h3><p>A check on your pancreas, which GLP-1 medicines can affect.</p></article>
+        <article><h3>Lipid panel</h3><p>Total cholesterol, LDL, HDL, and triglycerides, to track your heart health as your weight changes.</p></article>
+        <article><h3>Complete blood count (CBC)</h3><p>Red cells, white cells, and platelets, to spot anemia, infection, and more.</p></article>
+        <article><h3>Thyroid (TSH)</h3><p>Your thyroid helps set your energy and metabolism.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pp-res">
+    <div class="wrap pp-res-in">
+      <div class="pp-res-txt">
+        <div class="eyebrow">Your results</div>
+        <h2>A report made to be read, not decoded.</h2>
+        <p class="lede">Your results come on SMS Medical's own report, built for people, not just doctors.</p>
+        <ul class="dc-list">
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3L15 6.5"/></svg><span>Every result on a simple range bar, so you can see where you fall</span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3L15 6.5"/></svg><span>Anything high or low is flagged in words, not just color</span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3L15 6.5"/></svg><span>A short note on what each test checks</span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3L15 6.5"/></svg><span>Easy to share with the provider who manages your therapy</span></li>
+        </ul>
+      </div>
+      <figure class="pp-report" aria-label="Sample SMS Medical results report with made-up values">
+        <div class="pp-r-ribbon">Sample report · not a real patient</div>
+        <header class="pp-r-head">
+          <img src="img/sms-logo-color.png" alt="SMS Medical" width="150" height="45">
+          <div><b>Peptide Therapy Baseline &amp; Monitoring Panel</b><span>Patient: Alex Sample · Collected: Jan 6</span></div>
+        </header>
+        <div class="pp-r-rows">
+          <div class="pp-r-row"><div class="pp-r-name"><b>Glucose</b><small>Blood sugar right now</small></div><div class="pp-r-val">92 <small>mg/dL</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:25%;width:50%"></span><i style="left:44%"></i></div><em class="ok">In range</em></div>
+          <div class="pp-r-row"><div class="pp-r-name"><b>Hemoglobin A1c</b><small>3-month blood sugar</small></div><div class="pp-r-val">5.4 <small>%</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:0;width:62%"></span><i style="left:48%"></i></div><em class="ok">In range</em></div>
+          <div class="pp-r-row"><div class="pp-r-name"><b>Lipase</b><small>Pancreas</small></div><div class="pp-r-val">38 <small>U/L</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:20%;width:55%"></span><i style="left:45%"></i></div><em class="ok">In range</em></div>
+          <div class="pp-r-row"><div class="pp-r-name"><b>LDL cholesterol</b><small>"Bad" cholesterol</small></div><div class="pp-r-val">128 <small>mg/dL</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:0;width:55%"></span><i class="hi" style="left:72%"></i></div><em class="hi">High</em></div>
+          <div class="pp-r-row"><div class="pp-r-name"><b>Creatinine</b><small>Kidneys</small></div><div class="pp-r-val">0.9 <small>mg/dL</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:22%;width:52%"></span><i style="left:42%"></i></div><em class="ok">In range</em></div>
+          <div class="pp-r-row"><div class="pp-r-name"><b>TSH</b><small>Thyroid</small></div><div class="pp-r-val">2.1 <small>mIU/L</small></div><div class="pp-r-bar"><span class="pp-r-band" style="left:15%;width:60%"></span><i style="left:38%"></i></div><em class="ok">In range</em></div>
+        </div>
+        <figcaption class="pp-r-note"><b>What this means:</b> 5 of 6 results shown are in range. LDL cholesterol is above range; talk with your provider about it.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="pg-body">
+    <div class="wrap">
+      <div class="x-head"><div class="eyebrow">How it works</div><h2>Book online. In and out. Results to you.</h2></div>
+      <ol class="pp-steps">
+        <li><b>Book a time</b><span>Pick a time online in about a minute. You pay $150 at your visit.</span></li>
+        <li><b>Come in fasting</b><span>Skip food for 8 to 12 hours before your draw, since the panel includes blood sugar and cholesterol. Water is fine.</span></li>
+        <li><b>Quick blood draw</b><span>At our Oak Lawn patient center, 5533 W 109th St, Suite 101. Bring a photo ID.</span></li>
+        <li><b>Get your results</b><span><mark class="todo">[When results are ready, and how patients receive them]</mark></span></li>
+      </ol>
+      <div class="pg-acts pp-cta"><button type="button" class="btn btn-primary" data-acuity="peptide">Book your panel · $150 <span aria-hidden="true">→</span></button><a class="pc-link" href="tel:7084249405">Questions? Call (708) 424-9405</a></div>
+
+      <div class="faq-group pp-faq">
+        <h2>Common questions</h2>
+        <details><summary>Do I need a doctor's order?</summary><p><mark class="todo">[Yes or no, and what to bring]</mark></p></details>
+        <details><summary>Will this tell me what dose to take?</summary><p>No. The panel shows how your body is doing. Your dose and treatment are up to the provider who prescribes your medicine, so share your report with them.</p></details>
+        <details><summary>Does this test for peptides in my blood?</summary><p>No. It checks your blood sugar, organs, cholesterol, blood counts, and thyroid, the things your therapy can affect.</p></details>
+        <details><summary>Can I use insurance?</summary><p>$150 is the self-pay price. Call us at (708) 424-9405 if you'd like to check your insurance coverage instead.</p></details>
+        <details><summary>Are my results private?</summary><p>Yes. Your results are confidential and protected under HIPAA.</p></details>
+        <details><summary>When is the patient center open?</summary><p>Monday to Friday, 9:00 AM to 5:00 PM. Weekends by appointment.</p></details>
+      </div>
+      <p class="pp-fine">This panel checks general health markers. It does not diagnose, treat, or replace care from your provider. SMS Medical is a CLIA-certified, COLA-accredited clinical laboratory operated by Southwest Medical Solutions, Inc.</p>
+    </div>
+  </section>
 </div>
 
 <div id="view-faq" hidden>
@@ -2753,7 +2925,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       <div><img src="img/sms-logo-white.png" alt="SMS Medical" width="121" height="36"><p style="margin-top:14px;max-width:38ch">SMS Medical is a full-service, licensed, high-complexity clinical laboratory operated by Southwest Medical Solutions, Inc. United Diagnostic Services is a division of SMS Medical.</p></div>
       <div><h4>Services</h4><a href="#services">Laboratory</a><a href="#specialty">Molecular &amp; Toxicology</a><a href="#pgx">PGx testing</a><a href="#mobile-phlebotomy">Mobile phlebotomy</a><a href="#services">Mobile imaging</a><a href="#integrations">Integrations</a><a href="#technology">Technology</a><a href="#directory">Test directory</a></div>
       <div><h4>Providers</h4><a href="https://portal.smsmedical.net">Provider login</a><a href="#faq">FAQ</a><a href="#faq-critical">Critical value list</a><a href="#account">Open an account</a><a href="#supplies">Order supplies</a><a href="#pickup">Courier pickup</a><a href="#forms">Forms &amp; requisitions</a></div>
-      <div><h4>Patients</h4><a href="#patients">Patient center</a><a href="#book">Book an appointment</a><a href="#std">STD testing</a><a href="#dna">DNA testing</a><a href="#billing">Billing &amp; insurance</a><a href="#blog">Health articles</a></div>
+      <div><h4>Patients</h4><a href="#patients">Patient center</a><a href="#book">Book an appointment</a><a href="#std">STD testing</a><a href="#dna">DNA testing</a><a href="#peptide-panel">Peptide panel</a><a href="#billing">Billing &amp; insurance</a><a href="#blog">Health articles</a></div>
       <div><h4>Company</h4><a href="#credentials">Credentials</a><a href="#contact">Contact</a><a href="#coverage">Coverage map</a><a href="#careers">Careers</a><a href="#billing">Billing &amp; insurance</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></div>
     </div>
     <div class="legal"><span>CLIA 14D2189300 · COLA accredited · Laboratory Director: Haoliang Xu, MD</span><span>© 2026 Southwest Medical Solutions, Inc. All rights reserved. <span class="legal-links"><a href="#privacy">Privacy</a><a href="#terms">Terms</a></span></span></div>
@@ -2969,8 +3141,8 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 
   // online booking (Acuity)
   (function () {
-    var LINKS = {"general": "https://app.acuityscheduling.com/schedule.php?owner=21649853&location=5533%20W.%20109th%20St%20%23101%20Oak%20Lawn%2C%20IL%2060453", "std": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=category:STD%20Testing", "dna": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=category:DNA%20Testing", "std-gc": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44371552", "std-herpes": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44371674", "std-standard": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43081013", "std-comp": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43081044", "std-ext": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44436267", "std-custom": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43080971"};
-    var map = { 'STD testing': 'std', 'DNA testing': 'dna', 'Blood work': 'general' };
+    var LINKS = {"peptide": "https://app.acuityscheduling.com/schedule/f4ee2e5a/category/Peptide%2520Monitoring%2520Panel/appointment/98291934/calendar/8221522?locations=5533+W.+109th+St+%23101+Oak+Lawn%2C+IL+60453", "general": "https://app.acuityscheduling.com/schedule.php?owner=21649853&location=5533%20W.%20109th%20St%20%23101%20Oak%20Lawn%2C%20IL%2060453", "std": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=category:STD%20Testing", "dna": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=category:DNA%20Testing", "std-gc": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44371552", "std-herpes": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44371674", "std-standard": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43081013", "std-comp": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43081044", "std-ext": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=44436267", "std-custom": "https://app.acuityscheduling.com/schedule.php?owner=21649853&appointmentType=43080971"};
+    var map = { 'STD testing': 'std', 'DNA testing': 'dna', 'Blood work': 'general', 'Peptide panel': 'peptide' };
     var m = document.getElementById('bk-modal'), fr = document.getElementById('bk-m-frame'), nw = document.getElementById('bk-m-new'), ld = document.getElementById('bk-m-load'), last = null;
     if (!m) return;
     function open(key, title) {
@@ -2988,7 +3160,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       var a = e.target.closest('[data-acuity],[data-book]'); if (!a) return;
       e.preventDefault(); e.stopPropagation();
       var key = a.dataset.acuity || map[a.dataset.book] || 'general';
-      var t = key.indexOf('std') === 0 ? 'Book STD testing' : key === 'dna' ? 'Book DNA testing' : 'Book an appointment';
+      var t = key.indexOf('std') === 0 ? 'Book STD testing' : key === 'dna' ? 'Book DNA testing' : key === 'peptide' ? 'Book your peptide panel' : 'Book an appointment';
       open(key, t);
     }, true);
     document.getElementById('bk-m-close').addEventListener('click', close);
@@ -2999,7 +3171,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
   // ad measurement: Google Ads + Meta, live site only, never on health-topic pages
   (function () {
     if (!/(^|\.)smsmedlab\.com$|^(www\.|new\.)?smsmedical\.net$/.test(location.hostname)) return;
-    function sensitive() { return /^(std|dna|blog|patients|book|billing|good-faith-estimate)/.test(curHash()); }
+    function sensitive() { return /^(std|dna|blog|patients|book|billing|good-faith-estimate|peptide)/.test(curHash()); }
     function loadGoogle() {
       if (window.gtag) return;
       window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
@@ -3085,10 +3257,10 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 
   // simple two-view router: home and FAQ
   var vHome = document.getElementById('view-home'), vFaq = document.getElementById('view-faq');
-  function curHash() { var P = {"/std-testing": "std", "/dna-testing": "dna", "/privacy-policy": "privacy", "/terms-of-use": "terms", "/open-an-account": "account", "/forms": "forms", "/courier-pickup": "pickup", "/careers": "careers", "/billing-insurance": "billing", "/pgx-testing": "pgx", "/mobile-phlebotomy": "mobile-phlebotomy", "/patients": "patients", "/specialty-testing": "specialty", "/blog": "blog", "/faq": "faq", "/order-supplies": "supplies", "/test-directory": "directory", "/blogs/the-stigma-surrounding-stds": "blog-stigma", "/blogs/relationship-between-stds-and-mental-health": "blog-mental-health", "/blogs/the-often-overlooked-std-trich": "blog-trich"}; return location.hash.replace('#', '') || P[location.pathname.replace(/\/+$/, '')] || ''; }
+  function curHash() { var P = {"/std-testing": "std", "/dna-testing": "dna", "/privacy-policy": "privacy", "/terms-of-use": "terms", "/open-an-account": "account", "/forms": "forms", "/courier-pickup": "pickup", "/careers": "careers", "/billing-insurance": "billing", "/pgx-testing": "pgx", "/mobile-phlebotomy": "mobile-phlebotomy", "/patients": "patients", "/specialty-testing": "specialty", "/peptide-panel": "peptide-panel", "/blog": "blog", "/faq": "faq", "/order-supplies": "supplies", "/test-directory": "directory", "/blogs/the-stigma-surrounding-stds": "blog-stigma", "/blogs/relationship-between-stds-and-mental-health": "blog-mental-health", "/blogs/the-often-overlooked-std-trich": "blog-trich"}; return location.hash.replace('#', '') || P[location.pathname.replace(/\/+$/, '')] || ''; }
   var vBlog = document.getElementById('view-blog'), vSup = document.getElementById('view-supplies'), curView = 'home';
-  var vX = { std: document.getElementById('view-std'), dna: document.getElementById('view-dna'), privacy: document.getElementById('view-privacy'), terms: document.getElementById('view-terms'), account: document.getElementById('view-account'), forms: document.getElementById('view-forms'), pickup: document.getElementById('view-pickup'), careers: document.getElementById('view-careers'), billing: document.getElementById('view-billing'), pgx: document.getElementById('view-pgx'), 'mobile-phlebotomy': document.getElementById('view-mobile-phlebotomy'), specialty: document.getElementById('view-specialty'), patients: document.getElementById('view-patients') };
-  function viewOf(h) { if (h === 'apply') return 'careers'; if (h === 'book' || h === 'patients') return 'patients'; if (h === 'specialty') return 'specialty'; if (h === 'good-faith-estimate') return 'billing'; return h === 'directory' ? 'directory' : (h === 'std' || h === 'dna' || h === 'privacy' || h === 'terms' || h === 'account' || h === 'forms' || h === 'pickup' || h === 'careers' || h === 'billing' || h === 'pgx' || h === 'mobile-phlebotomy') ? h : h === 'supplies' ? 'supplies' : (h === 'faq' || h.indexOf('faq-') === 0) ? 'faq' : (h === 'blog' || h.indexOf('blog-') === 0) ? 'blog' : 'home'; }
+  var vX = { std: document.getElementById('view-std'), dna: document.getElementById('view-dna'), privacy: document.getElementById('view-privacy'), terms: document.getElementById('view-terms'), account: document.getElementById('view-account'), forms: document.getElementById('view-forms'), pickup: document.getElementById('view-pickup'), careers: document.getElementById('view-careers'), billing: document.getElementById('view-billing'), pgx: document.getElementById('view-pgx'), 'mobile-phlebotomy': document.getElementById('view-mobile-phlebotomy'), specialty: document.getElementById('view-specialty'), patients: document.getElementById('view-patients'), 'peptide-panel': document.getElementById('view-peptide-panel') };
+  function viewOf(h) { if (h === 'apply') return 'careers'; if (h === 'book' || h === 'patients') return 'patients'; if (h === 'specialty') return 'specialty'; if (h === 'good-faith-estimate') return 'billing'; return h === 'directory' ? 'directory' : (h === 'std' || h === 'dna' || h === 'privacy' || h === 'terms' || h === 'account' || h === 'forms' || h === 'pickup' || h === 'careers' || h === 'billing' || h === 'pgx' || h === 'mobile-phlebotomy' || h === 'peptide-panel') ? h : h === 'supplies' ? 'supplies' : (h === 'faq' || h.indexOf('faq-') === 0) ? 'faq' : (h === 'blog' || h.indexOf('blog-') === 0) ? 'blog' : 'home'; }
   function route() {
     var next = viewOf(curHash());
     var postChange = next === 'blog' && curView === 'blog';
@@ -3103,7 +3275,7 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
       document.getElementById('blog-index').hidden = !!post;
       vBlog.querySelectorAll('.post').forEach(function (p) { p.hidden = p !== post; });
       document.title = post ? post.querySelector('h1').textContent + ' · SMS Medical' : 'Blog · SMS Medical';
-    } else document.title = ({ supplies: 'Order supplies · SMS Medical', directory: 'Test Directory · SMS Medical', std: 'STD Testing in Oak Lawn, IL · SMS Medical', dna: 'DNA Paternity Testing in Oak Lawn, IL · SMS Medical', privacy: 'Privacy Policy · SMS Medical', terms: 'Terms of Use · SMS Medical', account: 'Open an Account · SMS Medical', forms: 'Forms & Requisitions · SMS Medical', pickup: 'Request a Courier Pickup · SMS Medical', careers: 'Careers · SMS Medical', billing: 'Billing & Insurance · SMS Medical', pgx: 'PGx Testing · SMS Medical', 'mobile-phlebotomy': 'Mobile Phlebotomy · SMS Medical', patients: 'Patients · SMS Medical', specialty: 'Specialty Testing · SMS Medical' })[v] || TITLE;
+    } else document.title = ({ supplies: 'Order supplies · SMS Medical', directory: 'Test Directory · SMS Medical', std: 'STD Testing in Oak Lawn, IL · SMS Medical', dna: 'DNA Paternity Testing in Oak Lawn, IL · SMS Medical', privacy: 'Privacy Policy · SMS Medical', terms: 'Terms of Use · SMS Medical', account: 'Open an Account · SMS Medical', forms: 'Forms & Requisitions · SMS Medical', pickup: 'Request a Courier Pickup · SMS Medical', careers: 'Careers · SMS Medical', billing: 'Billing & Insurance · SMS Medical', pgx: 'PGx Testing · SMS Medical', 'mobile-phlebotomy': 'Mobile Phlebotomy · SMS Medical', patients: 'Patients · SMS Medical', specialty: 'Specialty Testing · SMS Medical', 'peptide-panel': 'Peptide & GLP-1 Monitoring Panel · SMS Medical' })[v] || TITLE;
     curView = v; onScroll();
     var el = v !== 'blog' && v !== 'directory' && h && h !== 'faq' && h !== 'top' ? document.getElementById(h) : null;
     if (el) { requestAnimationFrame(function () { el.scrollIntoView(); }); }
