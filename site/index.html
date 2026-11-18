@@ -1563,14 +1563,19 @@ main:has(#view-home:not([hidden])) ~ .acc-band { display: none; }
 .pp-hc-row i, .pp-r-row em { font: 600 12px var(--text); font-style: normal; border-radius: 999px; padding: 3px 10px; white-space: nowrap}
 .pp-hc-row i.ok { background: rgba(94,234,212,.14); color: var(--mint)} .pp-hc-row i.hi { background: rgba(251,191,36,.16); color: #fcd34d}
 .pp-who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px}
-.pp-who article, .pp-tests article { background: #fff; border: 1.5px solid var(--line); border-radius: var(--r); padding: 24px}
-.pp-who h3, .pp-tests h3 { font-size: 19px; color: var(--ink); margin: 10px 0 6px}
-.pp-tests h3 { margin-top: 0; font-size: 17.5px}
-.pp-who p, .pp-tests p { margin: 0; color: var(--muted); font-size: 15.5px}
+.pp-who article, .pp-bio article { background: #fff; border: 1.5px solid var(--line); border-radius: var(--r); padding: 24px}
+.pp-who h3, .pp-bio h3 { font-size: 19px; color: var(--ink); margin: 10px 0 6px}
+.pp-bio h3 { font-size: 18px; margin: 14px 0 6px}
+.pp-who p, .pp-bio p { margin: 0; color: var(--muted); font-size: 15.5px}
 .pp-num { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-wash); color: var(--teal-ink); font: 700 15px var(--display)}
 .pp-gap { margin-top: 72px}
-.pp-tests { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px}
-.pp-tests article { border-top: 4px solid var(--teal)}
+.pp-bio { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px}
+.pp-bio article { display: flex; flex-direction: column}
+.pp-bio article > p { margin-bottom: 16px}
+.pp-ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--teal-wash)}
+.pp-ico svg { width: 24px; height: 24px; fill: none; stroke: var(--teal-ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round}
+.pp-chips { list-style: none; margin: auto 0 0; padding: 14px 0 0; border-top: 1px dashed var(--line-2); display: flex; flex-wrap: wrap; gap: 6px}
+.pp-chips li { font: 500 13px var(--text); color: var(--navy); background: var(--wash); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px}
 .pp-res { padding-block: 88px; background: #fff}
 .pp-res-in { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: center}
 .pp-res-txt { display: grid; gap: 14px}
@@ -2689,7 +2694,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
       <article class="pc" data-reveal style="--d:.09s">
         <span class="tag">Peptides &amp; GLP-1</span>
         <h3>Peptide monitoring panel</h3>
-        <p>On semaglutide, tirzepatide, or another peptide therapy? One $150 blood draw checks blood sugar, kidneys, liver, pancreas, thyroid, and cholesterol.</p>
+        <p>On semaglutide, tirzepatide, or another peptide therapy? One $150 blood draw checks 30+ biomarkers across blood sugar, heart, kidneys, liver, pancreas, and thyroid.</p>
         <div class="pc-acts"><a class="btn btn-primary sm" href="#book" data-book="Peptide panel">Book the panel</a><a class="pc-link" href="#peptide-panel">What's tested →</a></div>
       </article>
       <article class="pc" data-reveal style="--d:.12s">
@@ -2707,7 +2712,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <div class="bk-choices">
           <button type="button" class="bk-choice" data-acuity="std"><span><b>STD testing</b><small>Panels from $78 · confidential</small></span><i aria-hidden="true">→</i></button>
           <button type="button" class="bk-choice" data-acuity="dna"><span><b>DNA paternity testing</b><small>Peace of mind $150 · legal $295</small></span><i aria-hidden="true">→</i></button>
-          <button type="button" class="bk-choice" data-acuity="peptide"><span><b>Peptide &amp; GLP-1 monitoring panel</b><small>$150 · one blood draw</small></span><i aria-hidden="true">→</i></button>
+          <button type="button" class="bk-choice" data-acuity="peptide"><span><b>Peptide &amp; GLP-1 monitoring panel</b><small>$150 · 30+ biomarkers, one blood draw</small></span><i aria-hidden="true">→</i></button>
           <button type="button" class="bk-choice" data-acuity="general"><span><b>Blood work &amp; other tests</b><small>Bring your provider's order</small></span><i aria-hidden="true">→</i></button>
         </div>
         <p class="bk-note">Walk-ins are welcome on weekdays. Weekend visits are by appointment.<br>Prefer to call? <a href="tel:7084249405">(708) 424-9405</a></p>
@@ -2748,9 +2753,9 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <a class="back" href="#patients">← For patients</a>
         <div class="eyebrow">Peptide &amp; GLP-1 monitoring</div>
         <h1>Lab work for your peptide or GLP-1 journey.</h1>
-        <p class="lede">One quick blood draw checks how your body is doing before and during therapy: blood sugar, kidneys, liver, pancreas, thyroid, and cholesterol. You get an easy-to-read SMS Medical report to share with your provider.</p>
+        <p class="lede">One quick blood draw checks 30+ biomarkers that show how your body is doing before and during therapy: blood sugar, heart, kidneys, liver, pancreas, thyroid, and more. You get an easy-to-read SMS Medical report to share with your provider.</p>
         <div class="pg-acts"><button type="button" class="btn btn-primary" data-acuity="peptide">Book your panel · $150 <span aria-hidden="true">→</span></button><a class="pc-link" href="tel:7084249405">or call (708) 424-9405</a></div>
-        <ul class="pg-points"><li><b>$150 self-pay</b><span>One price, paid at your visit</span></li><li><b>One quick draw</b><span>At our Oak Lawn patient center</span></li><li><b>Clear results</b><span>Every number explained in plain words</span></li></ul>
+        <ul class="pg-points"><li><b>$150 self-pay</b><span>One price, paid at your visit</span></li><li><b>30+ biomarkers</b><span>From one quick blood draw</span></li><li><b>Clear results</b><span>Every number explained in plain words</span></li></ul>
       </div>
       <div class="pp-hero-card" aria-hidden="true">
         <div class="pp-hc-top"><img src="img/sms-logo-white.png" alt="" width="132" height="39"><span>Sample</span></div>
@@ -2771,15 +2776,16 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <article><span class="pp-num">3</span><h3>When something changes</h3><p>Switching medicines, changing your dose, or just not feeling right? A fresh panel gives you real numbers to talk about.</p></article>
       </div>
 
-      <div class="x-head pp-gap"><div class="eyebrow">What's tested</div><h2>Seven tests, one visit.</h2><p class="lede">Everything is run in our own CLIA-certified, COLA-accredited lab in Oak Lawn.</p></div>
-      <div class="pp-tests">
-        <article><h3>Comprehensive metabolic panel</h3><p>Blood sugar, kidney and liver function, and the salts and fluids your body needs. Important if you're eating or drinking less.</p></article>
-        <article><h3>Hemoglobin A1c</h3><p>Your average blood sugar over the last 2 to 3 months.</p></article>
-        <article><h3>Insulin</h3><p>How hard your body is working to keep your blood sugar steady.</p></article>
-        <article><h3>Lipase</h3><p>A check on your pancreas, which GLP-1 medicines can affect.</p></article>
-        <article><h3>Lipid panel</h3><p>Total cholesterol, LDL, HDL, and triglycerides, to track your heart health as your weight changes.</p></article>
-        <article><h3>Complete blood count (CBC)</h3><p>Red cells, white cells, and platelets, to spot anemia, infection, and more.</p></article>
-        <article><h3>Thyroid (TSH)</h3><p>Your thyroid helps set your energy and metabolism.</p></article>
+      <div class="x-head pp-gap"><div class="eyebrow">What's tested</div><h2>30+ biomarkers. 8 areas of your health. One blood draw.</h2><p class="lede">A biomarker is one thing we measure in your blood, like your blood sugar or your cholesterol. We group them by the part of your health they tell you about, all tested in our own CLIA-certified, COLA-accredited lab in Oak Lawn.</p></div>
+      <div class="pp-bio">
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></span><h3>Blood sugar &amp; metabolism</h3><p>Is your blood sugar steady, and how hard is your body working to keep it there? The main thing GLP-1 medicines are meant to improve.</p><ul class="pp-chips"><li>Glucose</li><li>Hemoglobin A1c</li><li>Insulin</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Heart health</h3><p>Your cholesterol and blood fats, and how they change as your weight changes.</p><ul class="pp-chips"><li>Total cholesterol</li><li>LDL ("bad")</li><li>HDL ("good")</li><li>Triglycerides</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4c-3 0-5 3-5 7s2 9 5 9c2 0 2-2 2-4V8c0-2-.5-4-2-4zM15 4c3 0 5 3 5 7s-2 9-5 9c-2 0-2-2-2-4V8c0-2 .5-4 2-4z"/></svg></span><h3>Kidney health</h3><p>How well your kidneys filter your blood. Worth watching if nausea or eating less leaves you dehydrated.</p><ul class="pp-chips"><li>Creatinine</li><li>BUN</li><li>eGFR</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11c0-4 4-6 9-6 4 0 9 1 9 5 0 5-6 9-12 9-3 0-6-3-6-8z"/><path d="M12 5v6"/></svg></span><h3>Liver health</h3><p>Liver enzymes and proteins that show how your liver is handling your medicines and weight loss.</p><ul class="pp-chips"><li>ALT</li><li>AST</li><li>Alkaline phosphatase</li><li>Bilirubin</li><li>Albumin</li><li>Total protein</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14c2-5 6-7 10-7 3 0 6 2 6 4s-2 3-4 3c-3 0-4 3-7 3-3 0-5-1-5-3z"/></svg></span><h3>Pancreas</h3><p>A check on the organ that makes insulin, which GLP-1 medicines can affect. A good number to have before you start.</p><ul class="pp-chips"><li>Lipase</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10l-1 18H8L7 3z"/><path d="M7.5 9h9"/></svg></span><h3>Hydration &amp; electrolytes</h3><p>The salts and minerals that keep your muscles, nerves, and heartbeat working. Easy to throw off when you're eating and drinking less.</p><ul class="pp-chips"><li>Sodium</li><li>Potassium</li><li>Chloride</li><li>Carbon dioxide</li><li>Calcium</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v5M7 9c-2 0-3 2-3 4 0 3 2 6 5 6 2 0 3-2 3-4V9M17 9c2 0 3 2 3 4 0 3-2 6-5 6-2 0-3-2-3-4"/></svg></span><h3>Thyroid</h3><p>Your thyroid helps set your energy, weight, and metabolism.</p><ul class="pp-chips"><li>TSH</li></ul></article>
+        <article><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><circle cx="16" cy="15" r="4"/></svg></span><h3>Blood health</h3><p>Your red cells, white cells, and platelets, to spot anemia, infection, and other blood problems.</p><ul class="pp-chips"><li>Red blood cells</li><li>Hemoglobin</li><li>Hematocrit</li><li>White blood cells</li><li>Platelets</li><li>+ cell size and count details</li></ul></article>
       </div>
     </div>
   </section>
@@ -2831,6 +2837,7 @@ mark.todo { background: #fff1a8; color: #5c4400; padding: 1px 4px; border-radius
         <h2>Common questions</h2>
         <details><summary>Do I need a doctor's order?</summary><p><mark class="todo">[Yes or no, and what to bring]</mark></p></details>
         <details><summary>Will this tell me what dose to take?</summary><p>No. The panel shows how your body is doing. Your dose and treatment are up to the provider who prescribes your medicine, so share your report with them.</p></details>
+        <details><summary>What's a biomarker?</summary><p>One thing we measure in your blood, like your blood sugar, your LDL cholesterol, or a liver enzyme. Together, your 30+ biomarkers give a picture of how your body is doing.</p></details>
         <details><summary>Does this test for peptides in my blood?</summary><p>No. It checks your blood sugar, organs, cholesterol, blood counts, and thyroid, the things your therapy can affect.</p></details>
         <details><summary>Can I use insurance?</summary><p>$150 is the self-pay price. Call us at (708) 424-9405 if you'd like to check your insurance coverage instead.</p></details>
         <details><summary>Are my results private?</summary><p>Yes. Your results are confidential and protected under HIPAA.</p></details>
